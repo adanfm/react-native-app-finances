@@ -122,7 +122,7 @@ export function Register() {
           </Fields>
 
 
-          <Button title="Enviar" onPress={() => handleSubmit(handleRegister)} />
+          <Button title="Enviar" onPress={handleSubmit(handleRegister)} />
         </Form>
 
         <Modal visible={categoryModalOpen}>
