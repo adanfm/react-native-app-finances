@@ -103,6 +103,29 @@ export function Dashboard () {
     const totalInterval = `01 a ${lastTransactionExpensives}`;
 
     const total = entriesTotal - expensiveTotal;
+    console.log({
+      entries: {
+        amount: entriesTotal.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }),
+        lastTransactions: `Última entrada em ${lastTransactionEntries}`,
+      },
+      expensives: {
+        amount: expensiveTotal.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }),
+        lastTransactions: `Última saida em ${lastTransactionExpensives}`,
+      },
+      total: {
+        amount: total.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }),
+        lastTransactions: totalInterval,
+      }
+    });
     setHighlightData({
       entries: {
         amount: entriesTotal.toLocaleString('pt-BR', {
@@ -160,7 +183,7 @@ export function Dashboard () {
             </UserWrapper>
           </Header>
 
-          <HighlightCards>`
+          <HighlightCards>
             <HighlightCard type="up" title="Entradas" amount={highlightData.entries.amount} lastTransaction={highlightData.entries.lastTransactions}/>
             <HighlightCard type="down" title="Saidas" amount={highlightData.expensives.amount} lastTransaction={highlightData.expensives.lastTransactions} />
             <HighlightCard type="total" title="Total" amount={highlightData.total.amount} lastTransaction={highlightData.total.lastTransactions} />
@@ -172,8 +195,7 @@ export function Dashboard () {
               data={transactions}
               keyExtrator={item => item.id}
               renderItem={({ item }) => (<TransactionCard data={item} />)}
-            >
-            </TransactionsList>
+            />
 
           </Transactions>
         </>
