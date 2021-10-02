@@ -14,7 +14,8 @@ import {
   Transactions,
   Title,
   TransactionsList,
-  LogoutButton
+  LogoutButton,
+  LoadContainer
 } from './styles';
 import {useTheme} from "@react-navigation/native";
 import {HighlightCard} from "../../components/HighlightCard";
@@ -22,7 +23,6 @@ import {TransactionCard, TransactionCardProps} from "../../components/Transactio
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { useFocusEffect } from '@react-navigation/native'
-import {LoadContainer} from "../Register/styles";
 
 export interface DataListProps extends TransactionCardProps {
   id: string;

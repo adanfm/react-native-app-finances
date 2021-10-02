@@ -94,3 +94,9 @@ export const TransactionsList = styled(FlatList as new () => FlatList<DataListPr
 })``
 
 export const LogoutButton = styled(BorderlessButton)``;
+
+export const LoadContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;

@@ -39,9 +39,3 @@ export const TransactionsTypes = styled.View`
   margin-top: 8px;
   margin-bottom: 16px;
 `;
-
-export const LoadContainer = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
